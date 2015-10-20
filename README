@@ -1,0 +1,25 @@
+This is your new Play application
+=================================
+
+This file will be packaged with your application, when using `activator dist`.
+
+
+
+to build eclipse project run:
+
+activator "eclipse with-source=true"
+
+to run use:
+
+activator run
+
+to debug use:
+
+activator -jvm-debug 9999 run
+
+
+start local server(30.3):
+./activator "start -Dhttp.port=9009"
+
+
+./activator "start -Dhttp.port=9019"

@@ -1,0 +1,36 @@
+{
+	"properties": {
+		"name": {
+			"type": "string",
+			"minLength": 3
+		},
+		
+		"secondName": {
+			"type": "string",
+			"minLength": 3
+		},
+		
+		"address": {
+			"type": "string",
+			"minLength": 3
+		},
+		
+		"age": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 120
+		},
+		
+		"email": {
+		"type": "string",
+		"format": "email"
+			
+		},
+		
+		"tasks": {
+			"type": "array",
+			"$ref": "file://localhost/C:/work/JAVA_ONE/SPA_GIT/app/model/json/schema/note.json"
+		}
+	},
+	"required": ["name", "secondName", "address", "age", "email"]
+}

@@ -1,0 +1,29 @@
+
+#Pages
+
+GET     /       						controllers.PageController.mainPage
+
+#Data
+
+POST    /jsonb/signIn/*userEmail       controllers.data.impl.JSONBController.signIn(userEmail:String)
+
+POST    /nojsonb/signIn/*userEmail       controllers.data.impl.NoJSONBController.signIn(userEmail:String)
+
+POST    /nojsonb/signUp 			      controllers.data.impl.NoJSONBController.signUp
+
+
+POST    /jsonb/signUp 			      controllers.data.impl.JSONBController.signUp
+
+POST    /jsonb/createNote/*userEmail       controllers.data.impl.JSONBController.createNote(userEmail:String)
+
+POST    /nojsonb/createNote/*userEmail       controllers.data.impl.NoJSONBController.createNote(userEmail:String)
+
+GET    /jsonb/notes/*userEmail/*level       controllers.data.impl.JSONBController.getNotes(userEmail:String, level:String)
+
+DELETE   /jsonb/delete/*userEmail       controllers.data.impl.JSONBController.delete(userEmail:String)
+DELETE   /nojsonb/delete/*userEmail       controllers.data.impl.NoJSONBController.delete(userEmail:String)
+
+GET    /nojsonb/notes/*userEmail/*level       controllers.data.impl.NoJSONBController.getNotes(userEmail:String, level:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
