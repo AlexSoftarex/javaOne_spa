@@ -11,18 +11,14 @@ import com.github.fge.jsonschema.core.report.ProcessingReport;
 import com.github.fge.jsonschema.main.JsonSchema;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
-import commons.ApplicationSettings;
-
 public class JsonValidatorJava extends JsonValidator {
 
 	private static ConcurrentHashMap<String, JsonSchema> schemaContainer = new ConcurrentHashMap<>();
 
 	static {
 
-		try {
-
-			File schemasFolder = new File(Play.application().configuration()
-					.getString(ApplicationSettings.PATH_TO_SCHEMAS.value));
+		try {  
+			File schemasFolder = new File(Play.application().path().getCanonicalPath() + "\\app\\model\\json\\schema");
 
 			for (File file : schemasFolder.listFiles()) {
 
