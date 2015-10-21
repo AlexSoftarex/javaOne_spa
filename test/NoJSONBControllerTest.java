@@ -47,7 +47,7 @@ public class NoJSONBControllerTest extends BaseTest {
 
 	fakeRequest = fakeRequest(DELETE, "/nojsonb/delete/" + noJsonbClient.getEmail());
 
-	result = callAction(controllers.data.impl.routes.ref.NoJSONBController.delete(jsonbClient.getEmail()), fakeRequest);
+	result = callAction(controllers.data.impl.routes.ref.NoJSONBController.delete(noJsonbClient.getEmail()), fakeRequest);
 
 	assertEquals(OK, status(result));
     }
